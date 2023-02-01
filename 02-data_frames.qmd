@@ -13,7 +13,7 @@ Cada paquetería sirve como una librería de funciones específicas; cada funci�
 "The tidyverse is an opinionated [**collection of R packages**](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
 
 ```{r}
-install.packages("tidyverse")
+# install.packages("tidyverse")
 
 
 ```
@@ -28,9 +28,9 @@ Vamos a instalar otras paqueterías
 
 ```{r}
 
-install.packages("readxl")
-install.packages("sf")
-install.packages("raster")
+# install.packages("readxl")
+# install.packages("sf")
+# install.packages("raster")
 
 ```
 
@@ -55,3 +55,7 @@ csv <- read.csv("data/LTEM_database.csv")
 Es un objeto de R que almacena datos en dos dimensiones, representadas por filas y columnas.
 
 Las columnas son las diferentes variables de la dataframe, y las filas son cada una de las observaciones en cada variable.
+
+![](images/image-2012359713.png)
+
+![](images/image-74236994.png)

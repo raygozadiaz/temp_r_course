@@ -1,0 +1,57 @@
+---
+title: "Data Frames"
+format: html
+editor: visual
+---
+
+## Packages
+
+Cada paquetería sirve como una librería de funciones específicas; cada función se puede entender como un verbo que le da a R una instrucción.
+
+#### Para Data Science:
+
+"The tidyverse is an opinionated [**collection of R packages**](https://www.tidyverse.org/packages) designed for data science. All packages share an underlying design philosophy, grammar, and data structures."
+
+```{r}
+install.packages("tidyverse")
+
+
+```
+
+Las paqueterías se instalan una sola vez, para usarlas las llamamos usando la función "library()"
+
+```{r}
+library(tidyverse)
+```
+
+Vamos a instalar otras paqueterías
+
+```{r}
+
+install.packages("readxl")
+install.packages("sf")
+install.packages("raster")
+
+```
+
+Por lo pronto, solo llamaremos a la paquetería "readxl"
+
+```{r}
+library(readxl)
+```
+
+```{r}
+R <- readRDS("data/LTEM_database.RDS")
+
+Excel <- read_xlsx("data/LTEM_database.xlsx", sheet=1)
+
+csv <- read.csv("data/LTEM_database.csv")
+
+
+```
+
+### Data Frames
+
+Es un objeto de R que almacena datos en dos dimensiones, representadas por filas y columnas.
+
+Las columnas son las diferentes variables de la dataframe, y las filas son cada una de las observaciones en cada variable.

@@ -1,0 +1,138 @@
+---
+title: "Introduction to R"
+format: html
+editor: visual
+---
+
+## Introducción
+
+R es una herramienta poderosa para realizar procedimiento estadísticos, y muchos otros tipos de análisis de datos más especializados. Este lenguaje fue creado por científicos para realizar estadísticas computacionales, además de que cuenta con una gran comunidad de paqueterías especializadas se construyeron con base en el lenguaje.
+
+## 
+
+Tipos de datos
+
+#### **R Logical Data Type**
+
+Los datos lógicos de R tienen dos valores posibles - `TRUE` or `FALSE`.
+
+Es importante siempre escribir los valores en mayúsculas, y sin comillas.
+
+#### **NA Data Type in R**
+
+R puede interpretar una ausencia de valores con la palabra NA, sin comillas. Esto significa que falta un valor numérico, de texto, lógico, etc.
+
+### **Operaciones Mateméticas**
+
+En R, podemos usar los símbolos convencionales para adición, resta, multiplicación y división, `+, -, *, and /`. R sigue el orden convencial de jerarquía de símbolos.
+
+```{r}
+#1
+573 - 74 + 1
+
+#2
+25 * 2
+
+#3
+10 / 5
+
+#4
+6*5-30
+
+#5
+6*5-30/6
+```
+
+### **Tipos de Datos en R**
+
+Generalmente, en los lenguajes de programación existen tipos de datos y representan la clasificación que le damos a los distintos tipos de piezas de información.
+
+Concretamente, R provee los tipos básicos de datos:
+
+-   Character
+
+-   Numeric
+
+-   Integer
+
+-   Logical
+
+-   Complex: Números imaginarios
+
+```{r}
+1 +2i
+```
+
+Cada tipo de datos se usa para representar algún tipo de información: números, strings, valores booleanos, etc.
+
+```{r}
+# Variable Numérica
+num <- 3
+
+# Variable de caracteres/"string" de texto
+char<- "happiness"
+
+# Variable lógica
+logical<- TRUE 
+```
+
+### **Condicionales con R**
+
+Los enunciados condicionales van dentro de paréntesis, y son seguidos por un par de llaves que contienen el código que será ejecutado.
+
+Si un condicional "if", se cumple (TRUE), entonces el código dentro de las llaves se ejecuta.
+
+```{r}
+if (size >= 50) {
+  print("'size too large for a 'Aglaophenia sp.' ")
+}
+```
+
+### **Comentarios**
+
+Después de `#` el texto se interpreta como símbolos y no como comandos.
+
+Los comentarios se usan para agregar líneas de texto que no serán ejecutadas por el script. Son útiles para añadir contexto, consejos, tips o recordatorios sobre lo que se está haciendo en el código, o también para silenciar líneas de código estamos probando funciones.
+
+```{r}
+#Texto auxiliar, notas
+#Separador---------
+
+# CTRL + SHIFT + C
+# y <- 100*2i
+
+```
+
+### **Caracteres en R**
+
+Los datos de caracteres incluyen todos los string de texto. Un caracter se distingue por estar encerrado en comillas. Aquí se incluyen las letras, números, espacios, símbolos, etc.
+
+```{r}
+
+#Numeric vs Character
+
+x <- 10
+y <- "10"
+
+class(x)
+class(y)
+
+
+#Importante
+
+x*5
+
+y*5
+```
+
+**Assignment Operator**
+
+Existen dos formas de asignar valores a las variables. Podemos usar el assignment operator, una flecha (`<-`) construida con el símbolo de menor qué y un guion. También se puede usar el símbolo de =, pero no es recomendable.
+
+```{r}
+
+#ALT + -
+vector  <-       c("Piscivoro", "Carnivoro", "Herbivoro", "Zooplanctivoro") 
+
+vector
+```

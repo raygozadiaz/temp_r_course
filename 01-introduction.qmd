@@ -83,7 +83,7 @@ Los enunciados condicionales van dentro de paréntesis, y son seguidos por un pa
 Si un condicional "if", se cumple (TRUE), entonces el código dentro de las llaves se ejecuta.
 
 ```{r}
-if (size >= 50) {
+if (size >=50 {
   print("'size too large for a 'Aglaophenia sp.' ")
 }
 ```

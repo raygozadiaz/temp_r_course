@@ -1,15 +1,26 @@
+
+# Librerias ---------------------------------------------------------------
 library(tidyverse)
 library(readxl)
 
-ltem <- readRDS("r_course/data/LTEM_database.RDS")
+
+# Load Data ---------------------------------------------------------------
+
+ltem <- readRDS("data/LTEM_database.RDS")
+ltem <- read_xlsx("data/LTEM_database.xlsx")
+
+
+# Biomass -----------------------------------------------------------------
+
+glimpse(ltem)
 
 db <- ltem  |>  
   mutate(A_ord = as.numeric(A_ord), 
-         B_pen = as.numeric(B_pen),
+         B_pen= as.numeric(B_pen),
          Quantity = as.numeric(Quantity ),
          Size=as.numeric(Size),
          Area= as.numeric(Area),
-         Biomass = (Quantity * A_ord * (Size^B_pen))/(Area * 100)) |>  
+         Biomass = (Quantity * A_ord* (Size^B_pen))/(Area * 100)) |>  
   mutate(TrophicGroup = factor(TrophicGroup, 
                                levels = c("Piscivoro", 
                                           "Carnivoro", 
@@ -25,15 +36,18 @@ db <- ltem  |>
 
 
 
+
 db |> 
   filter(Region %in% c("La Paz", "Loreto", "Los Cabos", "Cabo Pulmo")) |> 
+  filter(!is.na(TrophicGroup)) |>                 
   group_by(Region, TrophicGroup) |> 
-  summarise(Biomass= mean(Biomass2)) |> 
-  ggplot(aes(x=Region, y=Biomass, fill=Region))+
-  geom_violin(alpha=0.5, trim = F)+
-  geom_boxplot(alpha=0.5, fill=NA, aes(col=Region), size=0.2)+
-  geom_jitter(aes(col=TrophicGroup), alpha= 0.5)
-
+  summarise(Biomass= mean(Biomass)) |> 
+ggplot(aes(fill=TrophicGroup, y=Biomass, x=Region)) +
+        
+geom_bar(position="fill", stat="identity", col="#4287f5") +
+        theme_classic()+
+        labs(x="", fill="Trophic Group", y="Biomass (ton/ha)")
+        theme()
 
 
 
